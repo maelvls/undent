@@ -69,7 +69,7 @@ func Undent(s string) string {
 	}
 
 	curLineIndent := 0 // Number of tabs or spaces in the current line.
-	for pos := 0; pos < len(s); pos++ {
+	for pos := range s {
 		if s[pos] == '\n' {
 			if pos+1 < len(s) {
 				lineOffsets = append(lineOffsets, pos+1)
