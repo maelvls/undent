@@ -103,7 +103,7 @@ func Undent(s string) string {
 	// Extract each line without indentation.
 	out := make([]byte, 0, len(s)-(indentsPerLine*indentedLinesCnt))
 
-	for line := 0; line < len(lineOffsets); line++ {
+	for line := range lineOffsets {
 		first := lineOffsets[line]
 
 		// Index of the last character of the line. It is often the '\n'
